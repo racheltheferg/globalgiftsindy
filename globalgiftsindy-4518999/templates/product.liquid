@@ -3,7 +3,7 @@
   <div class="row clearfix">
     
     <!-- Begin breadcrumb -->
-    <div class="span12">
+    <div class="span12 guts">
       <div class="breadcrumb clearfix">
         <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="url"><span itemprop="title">Home</span></a></span> 
         <span class="arrow-space">&#62;</span>
@@ -118,23 +118,7 @@
               {% endfor %}
             </select>
           </div>
-          
-          {% if settings.display_quantity_dropdown %}
-          <div class="selector-wrapper">
-            <label>Quantity</label>
-            <input id="quantity" type="number" name="quantity" value="1" class="tc item-quantity" />
-          </div>
-          {% endif %}
-          
-          <div class="purchase-section{% if product.variants.size > 1 %} multiple{% endif %}">
-            <div class="purchase">
-              {% unless product.available %}
-              <p>Sold Out</p>
-              {% else %}
-              <input type="submit" id="add-to-cart" class="btn" name="add" value="Add to cart" />
-              {% endunless %}
-            </div>
-          </div>
+        
           
         </div>
         <!-- End product options -->
