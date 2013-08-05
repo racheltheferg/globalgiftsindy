@@ -1,10 +1,10 @@
 {% paginate article.comments by 100 %}
 <div id="article" class="row">
   
-  <div class="span9 article">
+  <div class="span9 content guts">
     
     <!-- Begin article -->
-    <div class="article-body clearfix">
+    <div class="article-body clearfix article">
       <h1>{{ article.title }} <span class="date" style="display: block;">{{ article.published_at | date: "%B %d %Y" }}{% if article.comments_enabled? %}, <span>{{ article.comments_count }} {{ article.comments_count | pluralize: "Comment", "Comments" }}</span>{% endif %}</span></h1>
       <div id="article-content">
         {{ article.content }}
