@@ -410,7 +410,7 @@ footer .tweet_text a:hover { color: {{ settings.footer_link_hover_color }} !impo
 .intro h3 a:hover { font-family: {{ settings.regular_font }}; color: {{ settings.link_hover_color }} !important; }
 
 /* 3.6 - Product & Collections */
-.product { position: relative; margin: 0 0 15px 18px; float: left; }
+.product { position: relative; margin: 0 18px 15px 0; float: left; }
 .product .image { position: relative; overflow: hidden; z-index: 8888; margin: 0 0 5px; }
 .product .image a { text-align: center; }
 .image a#placeholder.zoom, .thumbs .image a { text-align: center; }
@@ -452,13 +452,14 @@ footer .tweet_text a:hover { color: {{ settings.footer_link_hover_color }} !impo
   #collection .browse-tags label { margin: 7px 8px 0 0; }
   #collection .browse-tags select { float: right; height: 30px !important; line-height: 30px !important; }
 }
+.collection-guts {margin: 20px 20px 50px 20px; }
 .pagination { text-align: center; margin: 0 0 30px 0; padding: 0; }
 .pagination li { display: inline; padding: 0 12px; font-size: 14px; }
 .pagination li span { color: {{ settings.body_font_color }}; }
 .pagination li a { line-height: 16px; font-weight: normal; padding: 10px 14px; background: {{ settings.shop_btn_color }}; color: {{ settings.shop_btn_text_color }}; -webkit-border-radius:{{ settings.button_border_radius }}; -moz-border-radius:{{ settings.button_border_radius }}; border-radius:{{ settings.button_border_radius }}; }
 .pagination li a:hover { color: {{ settings.text_over_accent }}; background: {{ settings.accent_hover }}; text-decoration: none; }
 
-.guts {margin: 20px 20px 0 20px; width: 610px; }
+.guts {margin: 20px 20px 50px 20px; width: 610px; }
 
 /* 3.7 - Cart */
 #cart .buttons { margin-top: 30px; }
@@ -524,8 +525,8 @@ div.errors { margin-bottom: 15px; }
 /* 4.1 - Desktop Slim */
 
 
-.sidebar {float: right; width: 285px; }
-.sidebar img {width: 220px; margin: 20px 0 0 20px; }
+.sidebar {float: right; width: 285px; padding-top: 45px; }
+.sidebar img {width: 240px; padding: 20px 20px 0 0; }
 
 
 /* =================== */

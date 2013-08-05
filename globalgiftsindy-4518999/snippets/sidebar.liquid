@@ -1,16 +1,8 @@
-{% if settings.show_fp_images %}
 <!-- Begin sidebar images -->
 <div class="row sidebar span3" id="fp-images" style="margin-bottom:25px;">
-  {% for i in (1..3) %}
-  {% capture fp_image %}fp_image_{{ i }}.jpg{% endcapture %}
-  {% capture fp_link %}fp_image_{{ i }}_link{% endcapture %}
-  {% capture fp_alt %}fp_image_{{ i }}_alt{% endcapture %}
-  <div class="sidebar span3">
-    <a href="{{ settings[fp_link] }}">
-      <img src="{{ fp_image | asset_url }}" alt="{{ settings[fp_alt] | escape }}" />
-    </a>
+  <a href="/"><img src="{{ 'sidebar_1.jpg' | asset_url }}"></a>
+  <a href="/"><img src="{{ 'sidebar_3.jpg' | asset_url }}"></a>
+  <a href="/"><img src="{{ 'sidebar_2.jpg' | asset_url }}"></a>
   </div>
-  {% endfor %}
 </div>
 <!-- End sidebar images -->
-{% endif %}
