@@ -108,20 +108,7 @@
             
       <form id="add-item-form" action="/cart/add" method="post" class="variants clearfix">
         
-        <!-- Begin product options -->
-        <div class="product-options">
-        
-          <div class="select clearfix"{% if hide_default_title %} style="display:none"{% endif %}>
-            <select id="product-select" name="id">
-              {% for variant in product.variants %}
-              <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
-              {% endfor %}
-            </select>
-          </div>
-        
-          
-        </div>
-        <!-- End product options -->
+
         
       </form>
       
