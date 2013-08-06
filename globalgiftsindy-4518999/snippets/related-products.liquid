@@ -20,13 +20,11 @@
 
 {% if collection and collection.products_count > 1 %}
     
-<div class="row">
-  <div class="span12 guts">
-    <h3 class="collection-title">Related products</h3>
-  </div>
-</div> 
+<div class="span12">
+  <h3 class="collection-title">Related products</h3>
+</div>
     
-<div class="row products">
+<div class="span12 products">
 
 {% assign current_product = product %}
 {% assign current_product_found = false %}
