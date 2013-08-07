@@ -21,54 +21,62 @@
     <!-- End breadcrumb -->
     
     <!-- Begin product photos -->
-    <div class="{% if product.images.size == 1 or settings.thumbnails_position == 'below' %}span6{% else %}span5{% endif %}">
+      <div class="{% if product.images.size == 1 or settings.thumbnails_position == 'below' %}span6{% else %}span5{% endif %}">
       
-      <!-- Begin featured image -->
-      <div class="image featured">
-        {% if settings.enable_product_image_zoom %}
-        <a href="{{ product.featured_image | product_img_url: 'original' }}" class="cloud-zoom" rel="position: 'inside', showTitle: 'false'" id="placeholder">
-          <img src="{{ product.featured_image | product_img_url: 'original' }}" alt="{{ product.featured_image.alt | escape }}" />
-        </a>
-        {% else %}
-        <a href="{{ product.featured_image | product_img_url: 'original' }}" class="zoom" id="placeholder">
-          <img src="{{ product.featured_image | product_img_url: 'original' }}" alt="{{ product.featured_image.alt | escape }}" />
-        </a>
-        {% endif %}
-      </div>
-      <!-- End product image -->
+        <!-- Begin featured image -->
+        <div class="image featured">
+          {% if settings.enable_product_image_zoom %}
+          <a href="{{ product.featured_image | product_img_url: 'original' }}" class="cloud-zoom" rel="position: 'inside', showTitle: 'false'" id="placeholder">
+            <img src="{{ product.featured_image | product_img_url: 'original' }}" alt="{{ product.featured_image.alt | escape }}" />
+          </a>
+          {% else %}
+          <a href="{{ product.featured_image | product_img_url: 'original' }}" class="zoom" id="placeholder">
+            <img src="{{ product.featured_image | product_img_url: 'original' }}" alt="{{ product.featured_image.alt | escape }}" />
+          </a>
+          {% endif %}
+        </div>
+        <!-- End product image -->
       
-      {% if product.images.size > 1 and settings.thumbnails_position == 'below' %}
+        {% if product.images.size > 1 and settings.thumbnails_position == 'below' %}
       <!-- Begin thumbnails -->
-      <div class="thumbs clearfix" style="margin-left:-15px;">
-        {% for image in product.images %}
-        {% if settings.enable_product_image_zoom %}
-        <div class="image span2{% cycle 'last-in-row': '', '', ' last-in-row' %}">
-          <a href="{{ image | product_img_url: 'original' }}" class="cloud-zoom-gallery" rel="useZoom: 'placeholder', smallImage: '{{ image | product_img_url: 'original' }}', tint: '#ffffff'">
-            <img src="{{ image | product_img_url: 'medium' }}" alt="{{ image.alt | escape }}" />
-          </a>
+        <div class="thumbs clearfix" style="margin-left:-15px;">
+          {% for image in product.images %}
+          {% if settings.enable_product_image_zoom %}
+          
+          <div class="image span2{% cycle 'last-in-row': '', '', ' last-in-row' %}">
+            <a href="{{ image | product_img_url: 'original' }}" class="cloud-zoom-gallery" rel="useZoom: 'placeholder', smallImage: '{{ image | product_img_url: 'original' }}', tint: '#ffffff'">
+              <img src="{{ image | product_img_url: 'medium' }}" alt="{{ image.alt | escape }}" />
+            </a>
+          </div>
+          
+          {% else %}
+       
+          <div class="image span2{% cycle 'last-in-row': '', '', ' last-in-row' %}">
+            <a href="{{ image | product_img_url: 'original' }}" data-original-image="{{ image | product_img_url: 'original' }}">
+              <img src="{{ image | product_img_url: 'medium' }}" alt="{{ image.alt | escape }}" />
+            </a>
+          </div>
+          
+          {% endif %}
+          {% endfor %}
         </div>
-        {% else %}
-        <div class="image span2{% cycle 'last-in-row': '', '', ' last-in-row' %}">
-          <a href="{{ image | product_img_url: 'original' }}" data-original-image="{{ image | product_img_url: 'original' }}">
-            <img src="{{ image | product_img_url: 'medium' }}" alt="{{ image.alt | escape }}" />
-          </a>
-        </div>
-        {% endif %}
-        {% endfor %}
-      </div>
+        
       <!-- End thumbnails -->
-      <style>
-      .thumbs .image { margin: 15px 0 }
-      .thumbs .image { padding: 0 15px }
-      .thumbs .last-in-row { padding-right: 0 }
-      </style>
+      
+        <style>
+        .thumbs .image { margin: 15px 0 }
+        .thumbs .image { padding: 0 15px }
+        .thumbs .last-in-row { padding-right: 0 }
+        </style>
       {% endif %}
       
     </div>
     <!-- End product photos -->
     
     {% if product.images.size > 1 and settings.thumbnails_position == 'right' %}
+    
     <!-- Begin thumbnails -->
+   
     <div class="span1">
       <div class="thumbs clearfix">
         {% for image in product.images %}
@@ -88,7 +96,9 @@
         {% endfor %}
       </div>
     </div>
+    
     <!-- End thumbnails -->
+    
     {% endif %}
     
     
