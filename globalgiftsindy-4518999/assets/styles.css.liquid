@@ -385,7 +385,7 @@ table { width: 100%; border-spacing: 0;
         }
         
 table tr td 
-      { border-top: 1px solid {{ settings.border_color }}; 
+      { border-top: 0px solid {{ settings.border_color }}; 
         }
         
 table tr td, table tr th 
@@ -1305,7 +1305,7 @@ footer .tweet_text a:hover { color: {{ settings.footer_link_hover_color }} !impo
       }
 
 #product .featured { 
-      margin: 0 20px 30px 0;
+      margin: 0 20px 30px 0px;
       }
       
 #product .description { 
@@ -1313,9 +1313,10 @@ footer .tweet_text a:hover { color: {{ settings.footer_link_hover_color }} !impo
       }
       
 #product .thumbs .image { 
-      margin-bottom: 15px; 
+      margin-bottom: 15px;
       }
-      
+
+    
 #product .thumbs .image:nth-child(3n+4) { 
       clear: left; 
       }
@@ -1324,6 +1325,10 @@ footer .tweet_text a:hover { color: {{ settings.footer_link_hover_color }} !impo
       font-size: 20px; 
       padding-bottom: 5px; 
       padding-top: 20px;
+      }
+
+.description {
+      padding-left: 20px;
       }
       
 {% if settings.show_photo_border %}
@@ -1396,7 +1401,7 @@ footer .tweet_text a:hover { color: {{ settings.footer_link_hover_color }} !impo
   #collection .browse-tags label { 
       margin: 7px 8px 0 0; 
       }
-  #collection .browse-tags select { 
+#collection .browse-tags select { 
       float: right; 
       height: 30px !important; 
       line-height: 30px !important; 
