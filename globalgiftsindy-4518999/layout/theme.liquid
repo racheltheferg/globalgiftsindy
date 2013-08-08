@@ -187,7 +187,7 @@
         <div class="span5">
           
           {% if settings.footer_display_newsletter %}
-          <div class="p30">
+          <div class="p30 newsletter">
             <h4>{{ settings.footer_newsletter_title }}</h4>
             <form action="{{ settings.mailing_list_form_action }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
               <input type="email" value="" placeholder="Email Address" name="EMAIL" id="mail" /><input type="submit" class="btn newsletter" value="Subscribe" name="subscribe" id="subscribe" />
@@ -195,7 +195,7 @@
           </div>
           {% endif %}
           
-          <div class="clearfix">
+          <div class="clearfix newsletter">
           {% if settings.enable_social_links %}
             <h4>{{ settings.footer_social_title }}</h4>
             {% if settings.twitter_link != '' %}<a href="{{ settings.twitter_link }}" title="{{ shop.name }} on Twitter" class="icon-social twitter">Twitter</a>{% endif %}
