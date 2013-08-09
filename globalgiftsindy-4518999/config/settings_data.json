@@ -119,7 +119,6 @@
     "frontpage_collections": "",
     "thumbnails_position": "right",
     "pagination_limit": "24",
-    "products_per_row": "4",
     "product_opacity_hover": "0.7",
     "icon_cart_opacity": "8",
     "use_logo": true,

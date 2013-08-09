@@ -72,7 +72,7 @@ article, aside, details, figcaption, figure, dialog, footer, header, hgroup, men
 
 /* 1.3 - Forms and Inputs */
 
-content { background-color: #f4f3ec;} 
+content { background-color: #edeede;} 
 
 form  { margin:0; 
         padding:0; 
@@ -699,9 +699,8 @@ hr.divider {
 /* 2.2 - Grid System */
 
 .wrapper { 
-      width: 996px; 
+      width: 966px; 
       margin: 0 auto; 
-      padding: 0 15px; 
       background: {{ settings.shop_bg_color_content_area }}; 
       }
       
@@ -1150,6 +1149,7 @@ footer #mail { width: 168px; }
       
 .copyright .span2 img {
       float: left;
+      padding-left: 10px;
       }
 
 .copyright p {
@@ -1175,6 +1175,7 @@ footer .tweet_text a:hover { color: {{ settings.footer_link_hover_color }} !impo
 
 .latest-news {
         margin-top: 30px;
+        padding-left: 10px;
         }
         
 .footer-menu {
@@ -1220,6 +1221,10 @@ footer .tweet_text a:hover { color: {{ settings.footer_link_hover_color }} !impo
 
 
 /* 3.6 - Product & Collections */
+.related .product.span3 {
+      width: 217px;
+}
+
 .product { 
       position: relative; 
       margin: 0 18px 15px 0; 
@@ -1337,6 +1342,11 @@ footer .tweet_text a:hover { color: {{ settings.footer_link_hover_color }} !impo
 #product .featured { 
       margin: 0 20px 30px 0px;
       }
+
+#product .featured img { 
+      border: 2px solid;
+      border-color: #d4d2d2;
+      }
       
 #product .description { 
       margin-bottom: 15px; 
@@ -1344,6 +1354,8 @@ footer .tweet_text a:hover { color: {{ settings.footer_link_hover_color }} !impo
       
 #product .thumbs .image { 
       margin-bottom: 15px;
+      border: 1px solid;
+      border-color: #d4d2d2;
       }
 
     
@@ -1361,6 +1373,11 @@ footer .tweet_text a:hover { color: {{ settings.footer_link_hover_color }} !impo
       padding-left: 20px;
       }
       
+.collection-gallery {
+      border: 2px solid;
+      border-color: #d4d2d2;
+      }
+
 {% if settings.show_photo_border %}
 .image a { 
       display: block; 
