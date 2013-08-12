@@ -41,13 +41,14 @@
           {% for product in collection.products limit: settings.pagination_limit %}
           {% include 'product-loop' with collection.handle %}
           {% endfor %}
+          
+          {% include 'pagination' %}
+
+          {% endpaginate %}
         </div>
   
   
   
-        {% include 'pagination' %}
-
-        {% endpaginate %}
   
   <!-- End no products -->
 
