@@ -126,6 +126,45 @@
         {{ product.description }}
       </div>
       
+      {% if product.handle == 'global-gifts-gift-card' %}
+
+      <form id="add-item-form" action="/cart/add" method="post" class="variants clearfix">
+
+              <!-- Begin product options -->
+              <div class="product-options">
+
+                <div class="select clearfix"{% if hide_default_title %} style="display:none"{% endif %}>
+                  <p>Please choose gift card amount:</p><select id="product-select" name="id">
+                    {% for variant in product.variants %}
+                    <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+
+                {% if settings.display_quantity_dropdown %}
+                <div class="selector-wrapper">
+                  <label>Quantity</label>
+                  <input id="quantity" type="number" name="quantity" value="1" class="tc item-quantity" />
+                </div>
+                {% endif %}
+
+                <div class="purchase-section{% if product.variants.size > 1 %} multiple{% endif %}">
+                  <div class="purchase">
+                    {% unless product.available %}
+                    <p>Sold Out</p>
+                    {% else %}
+                    <input type="submit" id="add-to-cart" class="btn" name="add" value="Add to cart" />
+                    {% endunless %}
+                  </div>
+                </div>
+
+              </div>
+              <!-- End product options -->
+
+            </form>
+
+      
+      {% endif %}
       {% if settings.show_social %}
       <!-- Begin social buttons -->
       <div class="social">
@@ -133,7 +172,7 @@
       </div>
       <!-- End social buttons -->
       {% endif %}
-    
+
     </div>
     <!-- End description -->
     
@@ -147,7 +186,7 @@
   </div>
   
 </div> 
-
+</div>
 <div style="display:none" id="preloading">
 {% for image in product.images offset: 1 %}
 {{ image | product_img_url: 'original' | img_tag }}
