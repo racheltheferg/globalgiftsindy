@@ -53,18 +53,19 @@
   </div>
   {% endfor %}
   <!-- End results -->
-  
+  <div class="span11 search-paginate">
   {% include 'pagination' %}
 
   {% endif %}
   {% endif %}
 
   {% endpaginate %}
+  </div>
   
   {% else %}
 
   <div>
-    <div class="span12 expanded-message">
+    <div class="span11 expanded-message">
       <div class="search-field">
         <form class="search" action="/search">
           <input type="image" src="{{ 'icon-search.png' | asset_url }}" alt="Go" id="go">
@@ -73,6 +74,7 @@
       </div>
     </div>
   </div>
+  
 
   {% endif %}	
 </div> <!-- /#search -->
